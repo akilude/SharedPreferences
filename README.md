@@ -12,15 +12,8 @@ Cordova Plugin for Android SharedPreferences
 Android
 
 ###Installation
-#####$> cd project-path
-#####$> cordova plugin add https://github.com/edelworksgithub/SharedPreferences.git
+cordova plugin add https://github.com/akilude/SharedPreferences.git
 
-###Uninstallation
-#####$> cd project-path
-#####$> cordova plugin remove in.edelworks.sharedpreferences
-
-###Reference for Shared Preferences in Android
-[Android Developer - Saving Key-Value Sets](http://developer.android.com/training/basics/data-storage/shared-preferences.html)
 
 ###How to
 #####Initialize shared Preference file
