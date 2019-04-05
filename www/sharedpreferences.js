@@ -46,7 +46,7 @@ var sharedpreferences = {
 			packageName = packageName.toString();
 			activityName = activityName.toString();
 		}catch(e){}
-		cordova.exec(successCallback, errorCallback, 'Sharedpreferences', 'startPeerActivity', [packageName, activityName])
+		cordova.exec(successCallback, errorCallback, 'Sharedpreferences', 'startActivity', [packageName, activityName])
 	},
 	startGroupActivity: function(name, successCallback, errorCallback){
 		cordova.exec(successCallback, errorCallback, 'Sharedpreferences', 'startGroupActivity', ["null"])
