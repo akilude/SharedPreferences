@@ -141,3 +141,11 @@ function clearAll(){
 	
 }
 
+
+
+
+
+#####Start An Activity
+	sharedpreferences.startActivity("package_name", "activity_name", successHandler, errorHandler);
+
+

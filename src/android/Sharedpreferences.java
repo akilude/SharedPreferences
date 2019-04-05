@@ -26,8 +26,7 @@ public class Sharedpreferences extends CordovaPlugin {
 	public static final String REMOVE = "remove";
 	public static final String CLEAR = "clear";
 	public static final String SHARED_PREFERENCES = "SharedPreferences";
-	public static final String START_PEER_ACTIVITY = "startPeerActivity";
-	public static final String START_GROUP_ACTIVITY = "startGroupActivity";
+	public static final String START_ACTIVITY = "startActivity";
 	public static String PREF_FILE = "";
 	public static final String[] MODE_ARRAY = {"MODE_APPEND", "MODE_PRIVATE"};
 	SharedPreferences SharedPref;
@@ -35,17 +34,14 @@ public class Sharedpreferences extends CordovaPlugin {
 
 	@Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-		
-    	if(action.equals(START_PEER_ACTIVITY)){
-    		Intent intent = new Intent(getApplicationContext(), PeerActivity.class);
-            startActivity(intent);
-    		return;
-    	}
-
-    	if(action.equals(START_GROUP_ACTIVITY)){
-    		Intent intent = new Intent(getApplicationContext(), GroupActivity.class);
-            startActivity(intent);
-    		return;
+			
+		// starts an activity
+    	if(action.equals(START_ACTIVITY)){
+    		Context ctx=this.cordova.getActivity().getApplicationContext();
+    		Intent intent = new Intent();
+    		intent.setComponent(new ComponentName(args.getString(0), args.getString(0)+"."+args.getString(1)));    
+            ctx.startActivity(intent);
+    		return false;
     	}
 
 		//create shared Preferences
