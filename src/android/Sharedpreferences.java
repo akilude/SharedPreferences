@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import android.content.Intent;
+import android.content.ComponentName;
 
 public class Sharedpreferences extends CordovaPlugin {
 	public static final String GET_SHARED_PREFERENCES = "getSharedPreferences";
