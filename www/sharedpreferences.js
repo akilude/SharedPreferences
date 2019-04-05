@@ -29,18 +29,24 @@ var sharedpreferences = {
 	getLong: function(key, successCallback, errorCallback){
 		cordova.exec(successCallback, errorCallback, 'Sharedpreferences', 'getLong', [key])
 	},
-  putFloat:function(key, value, successCallback, errorCallback){
-    cordova.exec(successCallback, errorCallback, 'Sharedpreferences', 'putFloat', [key, value])
-  },
-  getFloat: function(key, successCallback, errorCallback){
-    cordova.exec(successCallback, errorCallback, 'Sharedpreferences', 'getFloat', [key])
-  },
+	putFloat:function(key, value, successCallback, errorCallback){
+	    cordova.exec(successCallback, errorCallback, 'Sharedpreferences', 'putFloat', [key, value])
+	},
+	getFloat: function(key, successCallback, errorCallback){
+	    cordova.exec(successCallback, errorCallback, 'Sharedpreferences', 'getFloat', [key])
+	},
 	remove: function(key, successCallback, errorCallback){
 		cordova.exec(successCallback, errorCallback, 'Sharedpreferences', 'remove', [key])
 	},
 	clear: function(successCallback, errorCallback){
 		cordova.exec(successCallback, errorCallback, 'Sharedpreferences', 'clear', ["null"])
-	}
+	},
+	startPeerActivity: function(name, successCallback, errorCallback){
+		cordova.exec(successCallback, errorCallback, 'Sharedpreferences', 'startPeerActivity', ["null"])
+	},
+	startGroupActivity: function(name, successCallback, errorCallback){
+		cordova.exec(successCallback, errorCallback, 'Sharedpreferences', 'startGroupActivity', ["null"])
+	},
 }
 
 module.exports =  sharedpreferences;

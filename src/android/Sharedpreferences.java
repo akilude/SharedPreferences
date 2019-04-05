@@ -9,6 +9,8 @@ import org.json.JSONException;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import android.content.Intent;
+
 public class Sharedpreferences extends CordovaPlugin {
 	public static final String GET_SHARED_PREFERENCES = "getSharedPreferences";
 	public static final String PUT_STRING = "putString";
@@ -24,6 +26,8 @@ public class Sharedpreferences extends CordovaPlugin {
 	public static final String REMOVE = "remove";
 	public static final String CLEAR = "clear";
 	public static final String SHARED_PREFERENCES = "SharedPreferences";
+	public static final String START_PEER_ACTIVITY = "startPeerActivity";
+	public static final String START_GROUP_ACTIVITY = "startGroupActivity";
 	public static String PREF_FILE = "";
 	public static final String[] MODE_ARRAY = {"MODE_APPEND", "MODE_PRIVATE"};
 	SharedPreferences SharedPref;
@@ -31,6 +35,19 @@ public class Sharedpreferences extends CordovaPlugin {
 
 	@Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+		
+    	if(action.equals(START_PEER_ACTIVITY)){
+    		Intent intent = new Intent(getApplicationContext(), PeerActivity.class);
+            startActivity(intent);
+    		return;
+    	}
+
+    	if(action.equals(START_GROUP_ACTIVITY)){
+    		Intent intent = new Intent(getApplicationContext(), GroupActivity.class);
+            startActivity(intent);
+    		return;
+    	}
+
 		//create shared Preferences
 		//two param filename and mode
 		//returns true if created with success message and false if not with exception message
